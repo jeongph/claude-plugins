@@ -16,28 +16,33 @@ jobs:
 
       - name: Update plugin SHAs
         run: |
-          UPDATED=false
           MARKETPLACE=".claude-plugin/marketplace.json"
+          CHECKSUM_BEFORE=$(sha256sum "$MARKETPLACE" | awk '{print $1}')
 
-          for ROW in $(jq -c '.plugins[]' "$MARKETPLACE"); do
-            NAME=$(echo "$ROW" | jq -r '.name')
-            URL=$(echo "$ROW" | jq -r '.source.url')
-            OLD_SHA=$(echo "$ROW" | jq -r '.source.sha')
+          PLUGIN_COUNT=$(jq '.plugins | length' "$MARKETPLACE")
+          for i in $(seq 0 $((PLUGIN_COUNT - 1))); do
+            NAME=$(jq -r ".plugins[$i].name" "$MARKETPLACE")
+            URL=$(jq -r ".plugins[$i].source.url" "$MARKETPLACE")
+            OLD_SHA=$(jq -r ".plugins[$i].source.sha" "$MARKETPLACE")
 
             NEW_SHA=$(git ls-remote "$URL" HEAD | awk '{print $1}')
 
             if [ -n "$NEW_SHA" ] && [ "$OLD_SHA" != "$NEW_SHA" ]; then
-              jq --arg name "$NAME" --arg sha "$NEW_SHA" \
-                '(.plugins[] | select(.name == $name) | .source.sha) = $sha' \
+              jq --arg idx "$i" --arg sha "$NEW_SHA" \
+                '.plugins[$idx | tonumber].source.sha = $sha' \
                 "$MARKETPLACE" > tmp.json && mv tmp.json "$MARKETPLACE"
               echo "Updated $NAME: $OLD_SHA -> $NEW_SHA"
-              UPDATED=true
             else
               echo "No change: $NAME"
             fi
           done
 
-          echo "updated=$UPDATED" >> "$GITHUB_OUTPUT"
+          CHECKSUM_AFTER=$(sha256sum "$MARKETPLACE" | awk '{print $1}')
+          if [ "$CHECKSUM_BEFORE" != "$CHECKSUM_AFTER" ]; then
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          fi
         id: check
 
       - name: Commit and push
