@@ -1,0 +1,50 @@
+name: Sync plugin SHAs
+
+on:
+  schedule:
+    - cron: '0 15 * * *'  # 매일 KST 00:00 (UTC 15:00)
+  workflow_dispatch:       # 수동 트리거도 가능
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update plugin SHAs
+        run: |
+          UPDATED=false
+          MARKETPLACE=".claude-plugin/marketplace.json"
+
+          for ROW in $(jq -c '.plugins[]' "$MARKETPLACE"); do
+            NAME=$(echo "$ROW" | jq -r '.name')
+            URL=$(echo "$ROW" | jq -r '.source.url')
+            OLD_SHA=$(echo "$ROW" | jq -r '.source.sha')
+
+            NEW_SHA=$(git ls-remote "$URL" HEAD | awk '{print $1}')
+
+            if [ -n "$NEW_SHA" ] && [ "$OLD_SHA" != "$NEW_SHA" ]; then
+              jq --arg name "$NAME" --arg sha "$NEW_SHA" \
+                '(.plugins[] | select(.name == $name) | .source.sha) = $sha' \
+                "$MARKETPLACE" > tmp.json && mv tmp.json "$MARKETPLACE"
+              echo "Updated $NAME: $OLD_SHA -> $NEW_SHA"
+              UPDATED=true
+            else
+              echo "No change: $NAME"
+            fi
+          done
+
+          echo "updated=$UPDATED" >> "$GITHUB_OUTPUT"
+        id: check
+
+      - name: Commit and push
+        if: steps.check.outputs.updated == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .claude-plugin/marketplace.json
+          git commit -m "chore: 플러그인 SHA 자동 갱신"
+          git push
