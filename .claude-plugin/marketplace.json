@@ -1,0 +1,26 @@
+{
+  "name": "jeongph-claude-plugins",
+  "owner": {
+    "name": "jeongph"
+  },
+  "plugins": [
+    {
+      "name": "why-is-my-claude-dumb",
+      "description": "Analyze your environment and recommend official marketplace plugins to make Claude Code smarter",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/why-is-my-claude-dumb.git",
+        "sha": "cd3c0f4a4ab3c89ed27a80624a27c6fd31684636"
+      }
+    },
+    {
+      "name": "claude-telemetry",
+      "description": "Customizable multi-line status line for Claude Code — real-time session telemetry in your terminal",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/claude-telemetry.git",
+        "sha": "6bba2fab2734f4e2da0a4f7b21202686f076fa79"
+      }
+    }
+  ]
+}
