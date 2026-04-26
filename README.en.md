@@ -28,6 +28,7 @@ Or browse via `/plugin > Discover`.
 |--------|-------------|----------|
 | [why-is-my-claude-dumb](#why-is-my-claude-dumb) | Environment analysis and plugin recommendations | productivity |
 | [claude-telemetry](#claude-telemetry) | Real-time session telemetry status line | productivity |
+| [pdf-scan-audit](#pdf-scan-audit) | Scan PDF quality audit (Korean docs) | utility |
 
 ---
 
@@ -91,6 +92,54 @@ Displays remaining context window, rate limits, git status, session duration, to
 | 3 | Active agent, vim mode (shown only when data is available) |
 
 [View repo →](https://github.com/jeongph/claude-telemetry)
+
+---
+
+### pdf-scan-audit
+
+> Detects missing/misordered/rotated/cropped pages in scanned PDF books.
+
+Audits scanned PDF books beyond surface metadata — checks rotation suspects, page-number continuity, and image cropping, then visually re-verifies suspect pages and reports a readable table. **Korean-first documentation; UI prompts also in Korean.**
+
+```
+/plugin install pdf-scan-audit@jeongph-claude-plugins
+```
+
+#### Features
+
+- **Page metadata audit** — size distribution, rotation, orientation, DPI consistency
+- **Blank/cropped detection** — pages without text+image, images extending past page boundaries
+- **Rotation suspects** — flags pages by text-line aspect ratio; visually verified
+- **Page-number continuity** — extracts header/footer sequences, auto-classifies OCR misreads vs. real gaps
+- **Auto offset estimation** — detects PDF↔book page offset
+- **Clean by default** — temp directory auto-removed; nothing left in your working directory
+
+#### Audit checks
+
+| Check | Detail |
+|-------|--------|
+| Page metadata | Size distribution, rotation, portrait/landscape orientation |
+| DPI | Estimated per-page DPI based on largest embedded image |
+| Blank pages | Pages with neither text nor image |
+| Rotation suspects | Estimated by text-line aspect ratio + visual verification |
+| Page-number continuity | Header/footer sequence gap analysis with OCR misread classification |
+| Visual re-verification | Suspect pages extracted to PNG and reviewed by Claude |
+
+#### Usage
+
+```
+Audit this scanned PDF for me
+/audit-pdf book1.pdf book2.pdf
+```
+
+Korean prompts also work: `이 PDF 스캔 검사해줘`
+
+#### Dependencies
+
+- Python 3.8+
+- PyMuPDF (`pip install pymupdf`)
+
+[View repo →](https://github.com/jeongph/pdf-scan-audit)
 
 ## Plugin Structure
 

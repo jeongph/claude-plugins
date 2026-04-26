@@ -28,6 +28,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 |----------|------|----------|
 | [why-is-my-claude-dumb](#why-is-my-claude-dumb) | 환경 분석 및 플러그인 추천 | productivity |
 | [claude-telemetry](#claude-telemetry) | 실시간 세션 텔레메트리 상태바 | productivity |
+| [pdf-scan-audit](#pdf-scan-audit) | 스캔 PDF 품질 정밀 진단 | utility |
 
 ---
 
@@ -91,6 +92,52 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 | 3 | 활성 에이전트, vim 모드 (데이터 있을 때만 표시) |
 
 [저장소 →](https://github.com/jeongph/claude-telemetry)
+
+---
+
+### pdf-scan-audit
+
+> 스캔 PDF의 페이지 누락·순서·회전·잘림·해상도 결함을 자동 검출.
+
+종이책을 스캐너로 읽은 PDF의 품질을 정밀 진단합니다. 메타데이터만 훑지 않고, 회전 의심·페이지번호 연속성·이미지 잘림까지 검사한 뒤 의심 페이지만 골라 시각 검증해 가독성 좋은 표로 보고합니다.
+
+```
+/plugin install pdf-scan-audit@jeongph-claude-plugins
+```
+
+#### 기능
+
+- **페이지 메타 검사** — 크기 분포, 회전, 방향, DPI 일관성 확인
+- **빈 페이지·잘림 검출** — 텍스트·이미지 모두 없는 페이지, 페이지 경계 밖으로 잘린 이미지 검출
+- **회전 의심 자동 추출** — 텍스트 줄 종횡비로 회전 페이지 추정 후 시각 검증
+- **페이지번호 연속성 분석** — 헤더/푸터에서 추출한 시퀀스로 누락·중복 검출, OCR 오인식 자동 분류
+- **PDF↔책 페이지 오프셋 자동 추정** — 본문 시작 위치 자동 감지
+- **임시 디렉토리 자동 정리** — 작업 디렉토리에 흔적 남기지 않음
+
+#### 검사 항목
+
+| 항목 | 상세 |
+|------|------|
+| 페이지 메타 | 크기 분포·회전·portrait/landscape 방향 |
+| 해상도(DPI) | 페이지별 임베디드 이미지 기준 DPI 추정 |
+| 빈 페이지 | 이미지·텍스트 모두 거의 없는 페이지 |
+| 회전 의심 | 텍스트 줄 종횡비 기반 추정 + 시각 검증 |
+| 페이지번호 연속성 | 헤더/푸터 시퀀스의 갭 분석, OCR 오인식 자동 분류 |
+| 의심 페이지 시각 검증 | PNG 추출 후 Claude가 직접 보고 판정 |
+
+#### 사용 예
+
+```
+이 PDF 스캔 검사해줘
+/audit-pdf book1.pdf book2.pdf
+```
+
+#### 의존성
+
+- Python 3.8+
+- PyMuPDF (`pip install pymupdf`)
+
+[저장소 →](https://github.com/jeongph/pdf-scan-audit)
 
 ## 플러그인 구조
 

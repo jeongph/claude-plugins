@@ -21,6 +21,15 @@
         "url": "https://github.com/jeongph/claude-telemetry.git",
         "sha": "3807d312bf56aa4f6b69b92547826841ee04109a"
       }
+    },
+    {
+      "name": "pdf-scan-audit",
+      "description": "스캔 PDF 품질 정밀 진단 - 페이지 누락·순서·회전·잘림·해상도 결함을 자동 검출하고 표로 보고합니다",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/pdf-scan-audit.git",
+        "sha": "6c53341ce1db1e0164e3444c8e39b1b03d4b727c"
+      }
     }
   ]
 }
