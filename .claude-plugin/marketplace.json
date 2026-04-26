@@ -28,7 +28,16 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-scan-audit.git",
-        "sha": "b68d3c8460793b87cfae888c9cbfc809fb904abd"
+        "sha": "c90e993ef48a62d050e2c4453d91dae4d243872c"
+      }
+    },
+    {
+      "name": "pdf-toolkit",
+      "description": "범용 PDF 수정 도구 - 페이지 회전·삭제·순서변경·추출, PDF 병합·분할, 메타데이터 편집을 안전한 비파괴 방식으로 수행합니다",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/pdf-toolkit.git",
+        "sha": "934e6ffb5e74dc05f0f3097689bd2ccb926f93c1"
       }
     }
   ]

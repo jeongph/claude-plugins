@@ -29,6 +29,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 | [why-is-my-claude-dumb](#why-is-my-claude-dumb) | 환경 분석 및 플러그인 추천 | productivity |
 | [claude-telemetry](#claude-telemetry) | 실시간 세션 텔레메트리 상태바 | productivity |
 | [pdf-scan-audit](#pdf-scan-audit) | 스캔 PDF 품질 정밀 진단 | utility |
+| [pdf-toolkit](#pdf-toolkit) | 범용 PDF 수정 도구 | utility |
 
 ---
 
@@ -138,6 +139,53 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 - PyMuPDF (`pip install pymupdf`)
 
 [저장소 →](https://github.com/jeongph/pdf-scan-audit)
+
+---
+
+### pdf-toolkit
+
+> 범용 PDF 수정 도구 — 페이지 회전·삭제·순서변경·추출, PDF 병합·분할, 메타데이터 편집.
+
+PyMuPDF 기반으로 일반인이 쓰는 PDF 작업의 90%를 cover합니다. 자연어로 호출하거나 슬래시 명령으로 정밀 제어할 수 있고, **원본은 항상 보존**됩니다.
+
+```
+/plugin install pdf-toolkit@jeongph-claude-plugins
+```
+
+#### 기능
+
+- **페이지 회전·삭제·순서변경·추출** — 단일/범위/전체 페이지 처리
+- **PDF 병합·분할** — 여러 PDF 결합, 또는 페이지 범위로 나누기
+- **메타데이터 편집** — title·author·subject·keywords 표시·편집
+- **비파괴 보존** — 모든 작업이 새 파일에 출력. `--in-place`는 명시적 옵션
+- **자연어·슬래시 모두 지원** — "이 PDF 54페이지 회전시켜줘" 또는 `/pdf-rotate`
+
+#### 슬래시 명령
+
+| 명령 | 작업 |
+|------|------|
+| `/pdf-rotate` | 페이지 회전 |
+| `/pdf-delete` | 페이지 삭제 |
+| `/pdf-reorder` | 페이지 순서 변경 또는 swap |
+| `/pdf-extract` | 지정 페이지를 새 PDF로 |
+| `/pdf-merge` | 여러 PDF 병합 |
+| `/pdf-split` | 페이지 범위로 분할 |
+| `/pdf-meta` | 메타데이터 표시·편집 |
+
+#### pdf-scan-audit과 연계
+
+```
+1. /audit-pdf book.pdf      → "p.54, p.98 회전 의심"
+2. /pdf-rotate book.pdf 54,98 180
+3. /audit-pdf book.fixed.pdf → 해결 확인
+```
+
+#### 의존성
+
+- Python 3.8+
+- PyMuPDF (`pip install pymupdf`)
+
+[저장소 →](https://github.com/jeongph/pdf-toolkit)
 
 ## 플러그인 구조
 

@@ -29,6 +29,7 @@ Or browse via `/plugin > Discover`.
 | [why-is-my-claude-dumb](#why-is-my-claude-dumb) | Environment analysis and plugin recommendations | productivity |
 | [claude-telemetry](#claude-telemetry) | Real-time session telemetry status line | productivity |
 | [pdf-scan-audit](#pdf-scan-audit) | Scan PDF quality audit (Korean docs) | utility |
+| [pdf-toolkit](#pdf-toolkit) | General-purpose PDF manipulation toolkit (Korean docs) | utility |
 
 ---
 
@@ -140,6 +141,53 @@ Korean prompts also work: `이 PDF 스캔 검사해줘`
 - PyMuPDF (`pip install pymupdf`)
 
 [View repo →](https://github.com/jeongph/pdf-scan-audit)
+
+---
+
+### pdf-toolkit
+
+> General-purpose PDF manipulation — rotate, delete, reorder, extract pages; merge or split PDFs; edit metadata.
+
+PyMuPDF-based toolkit covering ~90% of common PDF operations. Invoke via natural language or slash commands. **Originals are always preserved** by default. **Korean-first documentation; UI prompts also in Korean.**
+
+```
+/plugin install pdf-toolkit@jeongph-claude-plugins
+```
+
+#### Features
+
+- **Page operations** — rotate, delete, reorder, extract (single/range/all)
+- **Document operations** — merge multiple PDFs, split by page ranges
+- **Metadata editing** — title, author, subject, keywords, creator
+- **Non-destructive by default** — output goes to new file; `--in-place` is explicit
+- **Natural language and slash** — `이 PDF 54페이지 회전시켜줘` or `/pdf-rotate`
+
+#### Slash commands
+
+| Command | Operation |
+|---------|-----------|
+| `/pdf-rotate` | Rotate pages |
+| `/pdf-delete` | Delete pages |
+| `/pdf-reorder` | Reorder or swap pages |
+| `/pdf-extract` | Extract pages into new PDF |
+| `/pdf-merge` | Merge multiple PDFs |
+| `/pdf-split` | Split by page ranges |
+| `/pdf-meta` | Show or edit metadata |
+
+#### Pairs with pdf-scan-audit
+
+```
+1. /audit-pdf book.pdf       → "p.54, p.98 rotation suspect"
+2. /pdf-rotate book.pdf 54,98 180
+3. /audit-pdf book.fixed.pdf → confirm fix
+```
+
+#### Dependencies
+
+- Python 3.8+
+- PyMuPDF (`pip install pymupdf`)
+
+[View repo →](https://github.com/jeongph/pdf-toolkit)
 
 ## Plugin Structure
 
