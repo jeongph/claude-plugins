@@ -28,7 +28,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-scan-audit.git",
-        "sha": "c90e993ef48a62d050e2c4453d91dae4d243872c"
+        "sha": "205c96a0dfa1c6504c62a7240c5e5e2564bb0f32"
       }
     },
     {
@@ -37,7 +37,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-toolkit.git",
-        "sha": "934e6ffb5e74dc05f0f3097689bd2ccb926f93c1"
+        "sha": "2b310a148d8be67a1ee4409cd6734fd056e7eda7"
       }
     }
   ]
