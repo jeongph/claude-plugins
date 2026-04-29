@@ -42,11 +42,11 @@
     },
     {
       "name": "claude-intent",
-      "description": "코드는 의도의 그림자다 — 작업 사이클의 의도·대안·트레이드오프를 docs/intent/에 기록하고 역추적하는 dual-layer 시스템",
+      "description": "작업 사이클의 의도·대안·트레이드오프를 docs/intent/에 기록하고 역추적하는 Claude Code 플러그인",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-intent.git",
-        "sha": "fcd7913224e61e107873920e49b6e50d6402ac94"
+        "sha": "da0377ea6a68e773179c3c5e5581a5b1a8e30f10"
       }
     }
   ]
