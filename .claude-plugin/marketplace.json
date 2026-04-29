@@ -39,6 +39,15 @@
         "url": "https://github.com/jeongph/pdf-toolkit.git",
         "sha": "2b310a148d8be67a1ee4409cd6734fd056e7eda7"
       }
+    },
+    {
+      "name": "claude-intent",
+      "description": "코드는 의도의 그림자다 — 작업 사이클의 의도·대안·트레이드오프를 docs/intent/에 기록하고 역추적하는 dual-layer 시스템",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/claude-intent.git",
+        "sha": "fcd7913224e61e107873920e49b6e50d6402ac94"
+      }
     }
   ]
 }
