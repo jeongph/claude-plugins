@@ -82,25 +82,6 @@ PyMuPDF 기반의 비파괴 PDF 수정 플러그인. 자연어 또는 슬래시 
 
 [저장소 →](https://github.com/jeongph/pdf-toolkit)
 
-## 플러그인 구조
-
-각 플러그인은 아래 구조를 따릅니다:
-
-```
-plugin-name/
-├── .claude-plugin/
-│   └── plugin.json      # 플러그인 메타데이터 (필수)
-├── .mcp.json            # MCP 서버 설정 (선택)
-├── commands/            # 슬래시 커맨드 (선택)
-├── agents/              # 에이전트 정의 (선택)
-├── skills/              # 스킬 정의 (선택)
-└── README.md            # 문서
-```
-
-## 문서
-
-Claude Code 플러그인 개발에 대한 자세한 내용은 [공식 문서](https://code.claude.com/docs/en/plugins)를 참조하세요.
-
 ## 라이선스
 
 각 플러그인의 라이선스는 해당 저장소를 확인하세요.

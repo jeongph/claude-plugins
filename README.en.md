@@ -82,25 +82,6 @@ PyMuPDF-based non-destructive PDF toolkit. Invoke via natural language or slash 
 
 [View repo →](https://github.com/jeongph/pdf-toolkit)
 
-## Plugin Structure
-
-Each plugin follows this standard structure:
-
-```
-plugin-name/
-├── .claude-plugin/
-│   └── plugin.json      # Plugin metadata (required)
-├── .mcp.json            # MCP server configuration (optional)
-├── commands/            # Slash commands (optional)
-├── agents/              # Agent definitions (optional)
-├── skills/              # Skill definitions (optional)
-└── README.md            # Documentation
-```
-
-## Documentation
-
-For more information on developing Claude Code plugins, see the [official documentation](https://code.claude.com/docs/en/plugins).
-
 ## License
 
 Please see each plugin's repository for the relevant license.
