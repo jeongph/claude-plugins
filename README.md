@@ -28,6 +28,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 |----------|------|----------|
 | [why-is-my-claude-dumb](#why-is-my-claude-dumb) | 환경 분석 및 플러그인 추천 | productivity |
 | [claude-telemetry](#claude-telemetry) | 실시간 세션 텔레메트리 상태바 | productivity |
+| [claude-intent](#claude-intent) | 작업 사이클의 의도·대안·트레이드오프 기록 | productivity |
 | [pdf-scan-audit](#pdf-scan-audit) | 스캔 PDF 품질 정밀 진단 | utility |
 | [pdf-toolkit](#pdf-toolkit) | 범용 PDF 수정 도구 | utility |
 
@@ -37,29 +38,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 
 > Why is my Claude so dumb? Let's find out.
 
-로컬 환경(OS, 언어, 설치된 플러그인, MCP 서버, 프로젝트 컨텍스트)을 분석하고, 워크플로우에 맞는 공식 마켓플레이스 플러그인을 추천합니다.
-
-```
-/plugin install why-is-my-claude-dumb@jeongph-claude-plugins
-```
-
-#### 기능
-
-- **환경 분석** — OS, 설치된 런타임, Claude Code 설정, MCP 서버를 스캔
-- **맞춤 추천** — 공식 카탈로그(80+ 플러그인)에서 누락된 플러그인을 찾아 추천
-- **자동 트리거** — Claude에 불만을 표현하면 `dumb-doctor` 에이전트가 자동으로 환경 점검을 제안
-- **원클릭 설치** — 추천된 플러그인을 대화 중 바로 설치
-
-#### 분석 항목
-
-| 항목 | 상세 |
-|------|------|
-| 시스템 | OS, 플랫폼, 아키텍처 |
-| 언어 | Node, Python, Java, Go, Rust 등 설치된 런타임 |
-| 플러그인 | 설치된 플러그인 vs. 공식 카탈로그 |
-| 설정 | Claude Code 설정, hooks, 권한 |
-| 통합 | 연결된 MCP 서버 |
-| 프로젝트 | 프로젝트 타입, CLAUDE.md 유무 |
+로컬 환경(OS·언어·플러그인·MCP·프로젝트 컨텍스트)을 분석하고 공식 마켓플레이스에서 누락된 플러그인을 추천하는 플러그인.
 
 [저장소 →](https://github.com/jeongph/why-is-my-claude-dumb)
 
@@ -69,30 +48,19 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 
 > Customizable multi-line status line for Claude Code.
 
-남은 컨텍스트 윈도우, 요청 제한, git 상태, 세션 시간, 토큰 사용량 등을 컴팩트한 컬러 상태바로 표시합니다. OAuth/API 키 사용자를 자동 감지합니다.
-
-```
-/plugin install claude-telemetry@jeongph-claude-plugins
-```
-
-#### 기능
-
-- **잔량 표시** — 모든 바가 사용량이 아닌 잔량을 표시 (배터리처럼)
-- **자동 사용자 감지** — OAuth 사용자는 요청 제한, API 키 사용자는 비용 표시
-- **Git 통합** — 브랜치, push/pull, 변경사항, stash, worktree 표시
-- **컬러 코딩** — 잔량에 따라 초록 → 노랑 → 빨강 자동 전환
-- **적응형 너비** — 터미널 폭에 맞춰 자동 조절
-- **다국어** — 영어, 한국어, 일본어, 중국어 자동 감지
-
-#### 표시 항목
-
-| 라인 | 항목 |
-|------|------|
-| 1 | 모델명, 경과 시간, git (브랜치, push/pull, 변경사항, stash, worktree) |
-| 2 | 컨텍스트 잔량 %, 요청 제한 카운트다운, 비용, 변경 라인 수 |
-| 3 | 활성 에이전트, vim 모드 (데이터 있을 때만 표시) |
+남은 컨텍스트, 요청 제한, git 상태, 세션 시간, 토큰 사용량을 컴팩트한 컬러 상태바로 표시하는 플러그인. OAuth/API 키 사용자 자동 감지.
 
 [저장소 →](https://github.com/jeongph/claude-telemetry)
+
+---
+
+### claude-intent
+
+> 코드는 의도의 그림자다.
+
+작업 사이클의 의도·대안·트레이드오프를 `docs/intent/`에 기록하고 코드의 "왜"를 역추적하는 플러그인.
+
+[저장소 →](https://github.com/jeongph/claude-intent)
 
 ---
 
@@ -100,43 +68,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 
 > 스캔 PDF의 페이지 누락·순서·회전·잘림·해상도 결함을 자동 검출.
 
-종이책을 스캐너로 읽은 PDF의 품질을 정밀 진단합니다. 메타데이터만 훑지 않고, 회전 의심·페이지번호 연속성·이미지 잘림까지 검사한 뒤 의심 페이지만 골라 시각 검증해 가독성 좋은 표로 보고합니다.
-
-```
-/plugin install pdf-scan-audit@jeongph-claude-plugins
-```
-
-#### 기능
-
-- **페이지 메타 검사** — 크기 분포, 회전, 방향, DPI 일관성 확인
-- **빈 페이지·잘림 검출** — 텍스트·이미지 모두 없는 페이지, 페이지 경계 밖으로 잘린 이미지 검출
-- **회전 의심 자동 추출** — 텍스트 줄 종횡비로 회전 페이지 추정 후 시각 검증
-- **페이지번호 연속성 분석** — 헤더/푸터에서 추출한 시퀀스로 누락·중복 검출, OCR 오인식 자동 분류
-- **PDF↔책 페이지 오프셋 자동 추정** — 본문 시작 위치 자동 감지
-- **임시 디렉토리 자동 정리** — 작업 디렉토리에 흔적 남기지 않음
-
-#### 검사 항목
-
-| 항목 | 상세 |
-|------|------|
-| 페이지 메타 | 크기 분포·회전·portrait/landscape 방향 |
-| 해상도(DPI) | 페이지별 임베디드 이미지 기준 DPI 추정 |
-| 빈 페이지 | 이미지·텍스트 모두 거의 없는 페이지 |
-| 회전 의심 | 텍스트 줄 종횡비 기반 추정 + 시각 검증 |
-| 페이지번호 연속성 | 헤더/푸터 시퀀스의 갭 분석, OCR 오인식 자동 분류 |
-| 의심 페이지 시각 검증 | PNG 추출 후 Claude가 직접 보고 판정 |
-
-#### 사용 예
-
-```
-이 PDF 스캔 검사해줘
-/audit-pdf book1.pdf book2.pdf
-```
-
-#### 의존성
-
-- Python 3.8+
-- PyMuPDF (`pip install pymupdf`)
+종이책을 스캐너로 읽은 PDF의 품질을 정밀 진단하는 플러그인. 회전 의심·페이지번호 연속성·이미지 잘림까지 검사 후 의심 페이지를 시각 검증해 표로 보고.
 
 [저장소 →](https://github.com/jeongph/pdf-scan-audit)
 
@@ -146,44 +78,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 
 > 범용 PDF 수정 도구 — 페이지 회전·삭제·순서변경·추출, PDF 병합·분할, 메타데이터 편집.
 
-PyMuPDF 기반으로 일반인이 쓰는 PDF 작업의 90%를 cover합니다. 자연어로 호출하거나 슬래시 명령으로 정밀 제어할 수 있고, **원본은 항상 보존**됩니다.
-
-```
-/plugin install pdf-toolkit@jeongph-claude-plugins
-```
-
-#### 기능
-
-- **페이지 회전·삭제·순서변경·추출** — 단일/범위/전체 페이지 처리
-- **PDF 병합·분할** — 여러 PDF 결합, 또는 페이지 범위로 나누기
-- **메타데이터 편집** — title·author·subject·keywords 표시·편집
-- **비파괴 보존** — 모든 작업이 새 파일에 출력. `--in-place`는 명시적 옵션
-- **자연어·슬래시 모두 지원** — "이 PDF 54페이지 회전시켜줘" 또는 `/pdf-rotate`
-
-#### 슬래시 명령
-
-| 명령 | 작업 |
-|------|------|
-| `/pdf-rotate` | 페이지 회전 |
-| `/pdf-delete` | 페이지 삭제 |
-| `/pdf-reorder` | 페이지 순서 변경 또는 swap |
-| `/pdf-extract` | 지정 페이지를 새 PDF로 |
-| `/pdf-merge` | 여러 PDF 병합 |
-| `/pdf-split` | 페이지 범위로 분할 |
-| `/pdf-meta` | 메타데이터 표시·편집 |
-
-#### pdf-scan-audit과 연계
-
-```
-1. /audit-pdf book.pdf      → "p.54, p.98 회전 의심"
-2. /pdf-rotate book.pdf 54,98 180
-3. /audit-pdf book.fixed.pdf → 해결 확인
-```
-
-#### 의존성
-
-- Python 3.8+
-- PyMuPDF (`pip install pymupdf`)
+PyMuPDF 기반의 비파괴 PDF 수정 플러그인. 자연어 또는 슬래시 명령으로 호출, 원본은 항상 보존.
 
 [저장소 →](https://github.com/jeongph/pdf-toolkit)
 
