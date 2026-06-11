@@ -48,7 +48,7 @@ Analyzes your local environment (OS, languages, plugins, MCP servers, project co
 
 > Customizable multi-line status line for Claude Code.
 
-Displays remaining context, rate limits, git status, session time, and token usage in a compact color-coded status line. Auto-detects OAuth vs. API key users.
+Displays remaining context, rate limits, effort level, git status with PR badge, session time, and token usage in a compact color-coded status line. Auto-detects OAuth vs. API key users.
 
 [View repo →](https://github.com/jeongph/claude-telemetry)
 

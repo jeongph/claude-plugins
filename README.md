@@ -48,7 +48,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 
 > Customizable multi-line status line for Claude Code.
 
-남은 컨텍스트, 요청 제한, git 상태, 세션 시간, 토큰 사용량을 컴팩트한 컬러 상태바로 표시하는 플러그인. OAuth/API 키 사용자 자동 감지.
+남은 컨텍스트, 요청 제한, effort 레벨, git 상태·PR 뱃지, 세션 시간, 토큰 사용량을 컴팩트한 컬러 상태바로 표시하는 플러그인. OAuth/API 키 사용자 자동 감지.
 
 [저장소 →](https://github.com/jeongph/claude-telemetry)
 
