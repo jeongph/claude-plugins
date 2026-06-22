@@ -29,6 +29,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 | [why-is-my-claude-dumb](#why-is-my-claude-dumb) | 환경 분석 및 플러그인 추천 | productivity |
 | [claude-telemetry](#claude-telemetry) | 실시간 세션 텔레메트리 상태바 | productivity |
 | [claude-intent](#claude-intent) | 작업 사이클의 의도·대안·트레이드오프 기록 | productivity |
+| [claude-okf](#claude-okf) | OKF 기반 LLM-wiki 자동 활성화 | productivity |
 | [pdf-scan-audit](#pdf-scan-audit) | 스캔 PDF 품질 정밀 진단 | utility |
 | [pdf-toolkit](#pdf-toolkit) | 범용 PDF 수정 도구 | utility |
 
@@ -61,6 +62,16 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 작업 사이클의 의도·대안·트레이드오프를 `docs/intent/`에 기록하고 코드의 "왜"를 역추적하는 플러그인.
 
 [저장소 →](https://github.com/jeongph/claude-intent)
+
+---
+
+### claude-okf
+
+> 코드는 무엇을, 위키는 왜를 기억한다.
+
+OKF(Open Knowledge Format) 기반 LLM-wiki를 자동 활성화하는 플러그인. 코드에서 지식 노드 초안 생성(enrichment), 노드 작성 시 자동 검증·`index` 갱신, 모순·stale·orphan 점검(lint), 위키 기반 grounded 답변(ask). Karpathy의 LLM-wiki 패턴과 OKF 표준 포맷을 융합.
+
+[저장소 →](https://github.com/jeongph/claude-okf)
 
 ---
 

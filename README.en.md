@@ -29,6 +29,7 @@ Or browse via `/plugin > Discover`.
 | [why-is-my-claude-dumb](#why-is-my-claude-dumb) | Environment analysis and plugin recommendations | productivity |
 | [claude-telemetry](#claude-telemetry) | Real-time session telemetry status line | productivity |
 | [claude-intent](#claude-intent) | Records work cycle intent, alternatives, and trade-offs | productivity |
+| [claude-okf](#claude-okf) | OKF-based LLM-wiki auto-activation | productivity |
 | [pdf-scan-audit](#pdf-scan-audit) | Scan PDF quality audit (Korean docs) | utility |
 | [pdf-toolkit](#pdf-toolkit) | General-purpose PDF manipulation toolkit (Korean docs) | utility |
 
@@ -61,6 +62,16 @@ Displays remaining context, rate limits, effort level, git status with PR badge,
 Records the intent, alternatives, and trade-offs of each work cycle in `docs/intent/` so you can later trace the "why" behind code.
 
 [View repo →](https://github.com/jeongph/claude-intent)
+
+---
+
+### claude-okf
+
+> Code remembers what; the wiki remembers why.
+
+Auto-activates an OKF (Open Knowledge Format) based LLM-wiki. Drafts knowledge nodes from code (enrichment), auto-validates and updates the `index` on save, lints for contradictions/stale/orphans, and answers from the wiki (ask). Fuses Karpathy's LLM-wiki pattern with the OKF standard format.
+
+[View repo →](https://github.com/jeongph/claude-okf)
 
 ---
 
