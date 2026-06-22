@@ -48,6 +48,15 @@
         "url": "https://github.com/jeongph/claude-intent.git",
         "sha": "4a48e298fd3d1277e2d26230533c24ace545227d"
       }
+    },
+    {
+      "name": "claude-okf",
+      "description": "OKF 기반 LLM-wiki 자동 활성화 — 코드에서 지식 노드를 작성·검증·lint·enrichment",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/claude-okf.git",
+        "sha": "956fbc667854804089b17b1470be026e92bf00dd"
+      }
     }
   ]
 }
