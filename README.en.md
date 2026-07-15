@@ -32,6 +32,7 @@ Or browse via `/plugin > Discover`.
 | [claude-okf](#claude-okf) | OKF-based LLM-wiki auto-activation | productivity |
 | [pdf-scan-audit](#pdf-scan-audit) | Scan PDF quality audit (Korean docs) | utility |
 | [pdf-toolkit](#pdf-toolkit) | General-purpose PDF manipulation toolkit (Korean docs) | utility |
+| [claude-mbti](#claude-mbti) | Inject an MBTI personality into Claude | fun |
 
 ---
 
@@ -92,6 +93,35 @@ Audits scanned PDF book quality beyond surface metadata — checks rotation susp
 PyMuPDF-based non-destructive PDF toolkit. Invoke via natural language or slash commands; originals are always preserved. **Korean-first documentation.**
 
 [View repo →](https://github.com/jeongph/pdf-toolkit)
+
+---
+
+### claude-mbti
+
+> Give your Claude a personality. 🎭
+
+Injects one of 16 MBTI personalities (**tone + behavioral tendencies**) into your Claude Code session. Turn it on with `/mbti intj` and every response follows that type's tone and style; `/mbti off` returns to your normal Claude. Correctness, safety, and project conventions are always preserved regardless of personality.
+
+**Install**
+
+```
+/plugin marketplace add jeongph/claude-plugins
+/plugin install claude-mbti@jeongph-claude-plugins
+```
+
+**Usage**
+
+| Command | Action |
+|---------|--------|
+| `/mbti intj` | Turn on a personality (16 types supported) |
+| `/mbti off` | Turn off (back to normal Claude) |
+| `/mbti` | Show the active type |
+| `/mbti list` | List all 16 types |
+| `/mbti random` | Assign a random type |
+
+**License:** MIT
+
+[View repo →](https://github.com/jeongph/claude-mbti)
 
 ## License
 

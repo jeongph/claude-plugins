@@ -57,6 +57,15 @@
         "url": "https://github.com/jeongph/claude-okf.git",
         "sha": "840f917ed60234ffa63128304c9a942458586de8"
       }
+    },
+    {
+      "name": "claude-mbti",
+      "description": "Claude Code 세션에 16가지 MBTI 성격(말투+행동 성향)을 주입 — /mbti 명령으로 켜고 끄고 전환",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/claude-mbti.git",
+        "sha": "84b0142d0a276eafbd777bc01a6efd69f8a22c3b"
+      }
     }
   ]
 }
