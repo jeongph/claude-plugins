@@ -24,116 +24,23 @@ Or browse via `/plugin > Discover`.
 
 ## Available Plugins
 
+Click a plugin name to open its repository. Installation, usage, and full documentation live in each repository's README.
+
 | Plugin | Description | Category |
 |--------|-------------|----------|
-| [why-is-my-claude-dumb](#why-is-my-claude-dumb) | Environment analysis and plugin recommendations | productivity |
-| [claude-telemetry](#claude-telemetry) | Real-time session telemetry status line | productivity |
-| [claude-intent](#claude-intent) | Records work cycle intent, alternatives, and trade-offs | productivity |
-| [claude-okf](#claude-okf) | OKF-based LLM-wiki auto-activation | productivity |
-| [git-flow](#git-flow) | Git Flow branching model automated over pull requests | productivity |
-| [pdf-scan-audit](#pdf-scan-audit) | Scan PDF quality audit (Korean docs) | utility |
-| [pdf-toolkit](#pdf-toolkit) | General-purpose PDF manipulation toolkit (Korean docs) | utility |
-| [claude-mbti](#claude-mbti) | Inject an MBTI personality into Claude | fun |
+| [claude-intent](https://github.com/jeongph/claude-intent) | Code is the shadow of intent — records each work cycle's intent, alternatives, and trade-offs in `docs/intent/` so you can trace the "why" | productivity |
+| [claude-mbti](https://github.com/jeongph/claude-mbti) | Give Claude a personality 🎭 — injects one of 16 MBTI types (tone + behavior), toggled with `/mbti` | fun |
+| [claude-okf](https://github.com/jeongph/claude-okf) | Code remembers what; the wiki remembers why — OKF-based LLM-wiki with node drafting, auto-validation, lint, and grounded answers | productivity |
+| [claude-telemetry](https://github.com/jeongph/claude-telemetry) | Remaining context, rate limits, effort level, git status, and token usage in a compact color-coded status line | productivity |
+| [git-flow](https://github.com/jeongph/git-flow) | Mistakes happen when you finish a branch, not when you create one — automates Git Flow over pull requests and blocks violations | productivity |
+| [pdf-scan-audit](https://github.com/jeongph/pdf-scan-audit) | Detects missing pages, ordering, rotation, cropping, and resolution defects in scanned PDFs (Korean docs) | utility |
+| [pdf-toolkit](https://github.com/jeongph/pdf-toolkit) | General-purpose PDF toolkit — rotate, delete, reorder, extract, merge, split, and edit metadata, non-destructively (Korean docs) | utility |
+| [why-is-my-claude-dumb](https://github.com/jeongph/why-is-my-claude-dumb) | Why is my Claude so dumb? Let's find out — analyzes your environment and recommends missing official-marketplace plugins | productivity |
 
----
+## Contributing
 
-### why-is-my-claude-dumb
-
-> Why is my Claude so dumb? Let's find out.
-
-Analyzes your local environment (OS, languages, plugins, MCP servers, project context) and recommends missing plugins from the official marketplace.
-
-[View repo →](https://github.com/jeongph/why-is-my-claude-dumb)
-
----
-
-### claude-telemetry
-
-> Customizable multi-line status line for Claude Code.
-
-Displays remaining context, rate limits, effort level, git status with PR badge, session time, and token usage in a compact color-coded status line. Auto-detects OAuth vs. API key users, keeps the binary in sync automatically, and cleans itself up on uninstall.
-
-[View repo →](https://github.com/jeongph/claude-telemetry)
-
----
-
-### claude-intent
-
-> Code is the shadow of intent.
-
-Records the intent, alternatives, and trade-offs of each work cycle in `docs/intent/` so you can later trace the "why" behind code.
-
-[View repo →](https://github.com/jeongph/claude-intent)
-
----
-
-### claude-okf
-
-> Code remembers what; the wiki remembers why.
-
-Auto-activates an OKF (Open Knowledge Format) based LLM-wiki. Drafts knowledge nodes from code (enrichment), auto-validates and updates the `index` on save, lints for contradictions/stale/orphans, and answers from the wiki (ask). Fuses Karpathy's LLM-wiki pattern with the OKF standard format.
-
-[View repo →](https://github.com/jeongph/claude-okf)
-
----
-
-### git-flow
-
-> Mistakes don't happen when you create a branch. They happen when you finish one.
-
-Automates the Git Flow branching model over pull requests. Starts branches from the correct base (`/git-flow:feature`, `release`, `hotfix`), computes the next version by analyzing commits since the last tag against Conventional Commits, and advances completion one idempotent step at a time (`/git-flow:finish`). Hooks block direct commits to `main`, `--squash` merges, hotfixes cut from `develop`, and release tags on non-`main` commits. Unlike the archived `git flow` CLI, it integrates through pull requests rather than local direct merges.
-
-[View repo →](https://github.com/jeongph/git-flow)
-
----
-
-### pdf-scan-audit
-
-> Detects missing/misordered/rotated/cropped pages in scanned PDF books.
-
-Audits scanned PDF book quality beyond surface metadata — checks rotation suspects, page-number continuity, and image cropping, then visually re-verifies suspect pages. **Korean-first documentation.**
-
-[View repo →](https://github.com/jeongph/pdf-scan-audit)
-
----
-
-### pdf-toolkit
-
-> General-purpose PDF manipulation — rotate, delete, reorder, extract pages; merge or split PDFs; edit metadata.
-
-PyMuPDF-based non-destructive PDF toolkit. Invoke via natural language or slash commands; originals are always preserved. **Korean-first documentation.**
-
-[View repo →](https://github.com/jeongph/pdf-toolkit)
-
----
-
-### claude-mbti
-
-> Give your Claude a personality. 🎭
-
-Injects one of 16 MBTI personalities (**tone + behavioral tendencies**) into your Claude Code session. Turn it on with `/mbti intj` and every response follows that type's tone and style; `/mbti off` returns to your normal Claude. Correctness, safety, and project conventions are always preserved regardless of personality.
-
-**Install**
-
-```
-/plugin marketplace add jeongph/claude-plugins
-/plugin install claude-mbti@jeongph-claude-plugins
-```
-
-**Usage**
-
-| Command | Action |
-|---------|--------|
-| `/mbti intj` | Turn on a personality (16 types supported) |
-| `/mbti off` | Turn off (back to normal Claude) |
-| `/mbti` | Show the active type |
-| `/mbti list` | List all 16 types |
-| `/mbti random` | Assign a random type |
-
-**License:** MIT
-
-[View repo →](https://github.com/jeongph/claude-mbti)
+See [CONTRIBUTING.md](CONTRIBUTING.md) for what to update when adding or changing a plugin.
 
 ## License
 
-Please see each plugin's repository for the relevant license.
+Each plugin's license is listed in its own repository.
