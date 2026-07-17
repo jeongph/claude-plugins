@@ -67,11 +67,13 @@ claude plugin validate .
 ```
 
 ```sh
-git pull --rebase origin main    # CI 자동 커밋과 충돌 방지 (아래 참조)
 git add .claude-plugin/marketplace.json README.md README.en.md
 git commit -m "feat: <플러그인명> 플러그인 등록"
+git pull --rebase origin main    # CI 자동 커밋 위로 얹는다 (아래 참조)
 git push origin main
 ```
+
+`pull --rebase`는 **커밋한 뒤에** 실행한다. 미커밋 변경이 남아 있으면 rebase가 거부된다.
 
 ---
 
@@ -109,7 +111,7 @@ README 표의 설명도 함께 볼 것. 세 곳이 같은 대상을 가리킨다
 - **범위**: `source.sha` **만** 갱신한다. `name`·`description`·`url`은 사람이 관리한다
 - **커밋**: 변경이 있으면 `chore: 플러그인 SHA 자동 갱신`으로 자동 커밋·푸시
 
-**푸시 전 `git pull --rebase`를 습관화한다.** CI가 이 저장소에 직접 커밋하므로, 로컬이 뒤처져 있으면 push가 거부된다. 대개 다른 항목의 SHA만 바뀌어 충돌 없이 리베이스된다.
+**커밋한 뒤 push 전에 `git pull --rebase`를 습관화한다.** CI가 이 저장소에 직접 커밋하므로, 로컬이 뒤처져 있으면 push가 거부된다. 대개 다른 항목의 SHA만 바뀌어 충돌 없이 리베이스된다.
 
 플러그인 저장소에 커밋을 푸시하면 다음 자정에 SHA가 자동으로 따라온다. 즉 **플러그인 코드를 고친 뒤 이 저장소를 손댈 필요는 없다.**
 
