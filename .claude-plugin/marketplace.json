@@ -3,6 +3,7 @@
   "owner": {
     "name": "jeongph"
   },
+  "description": "jeongph가 관리하는 플러그인 모음",
   "plugins": [
     {
       "name": "why-is-my-claude-dumb",
