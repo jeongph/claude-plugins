@@ -66,6 +66,15 @@
         "url": "https://github.com/jeongph/claude-mbti.git",
         "sha": "84b0142d0a276eafbd777bc01a6efd69f8a22c3b"
       }
+    },
+    {
+      "name": "git-flow",
+      "description": "Git Flow 브랜치 모델을 PR 기반으로 자동화 — feature·release·hotfix 절차 실행, 커밋에서 다음 버전 추론, 모델 위반 차단",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/git-flow.git",
+        "sha": "9f4c9f16fc5b1f5853d6ee522ab2763489f0803d"
+      }
     }
   ]
 }

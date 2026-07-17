@@ -30,6 +30,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 | [claude-telemetry](#claude-telemetry) | 실시간 세션 텔레메트리 상태바 | productivity |
 | [claude-intent](#claude-intent) | 작업 사이클의 의도·대안·트레이드오프 기록 | productivity |
 | [claude-okf](#claude-okf) | OKF 기반 LLM-wiki 자동 활성화 | productivity |
+| [git-flow](#git-flow) | Git Flow 브랜치 모델 PR 기반 자동화 | productivity |
 | [pdf-scan-audit](#pdf-scan-audit) | 스캔 PDF 품질 정밀 진단 | utility |
 | [pdf-toolkit](#pdf-toolkit) | 범용 PDF 수정 도구 | utility |
 | [claude-mbti](#claude-mbti) | Claude에게 MBTI 성격 주입 | fun |
@@ -73,6 +74,16 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 OKF(Open Knowledge Format) 기반 LLM-wiki를 자동 활성화하는 플러그인. 코드에서 지식 노드 초안 생성(enrichment), 노드 작성 시 자동 검증·`index` 갱신, 모순·stale·orphan 점검(lint), 위키 기반 grounded 답변(ask). Karpathy의 LLM-wiki 패턴과 OKF 표준 포맷을 융합.
 
 [저장소 →](https://github.com/jeongph/claude-okf)
+
+---
+
+### git-flow
+
+> 실수는 브랜치를 만들 때가 아니라 끝낼 때 난다.
+
+Git Flow 브랜치 모델을 PR 기반으로 자동화하는 플러그인. 올바른 분기점에서 브랜치를 만들고(`/git-flow:feature`·`release`·`hotfix`), 마지막 태그 이후 커밋을 Conventional Commits로 분석해 다음 버전을 계산하며, 완료 절차를 멱등적으로 한 단계씩 진행한다(`/git-flow:finish`). 훅이 `main` 직접 커밋·`--squash` 머지·`develop`발 hotfix 분기·비-`main` 태그를 차단한다. 아카이브된 `git flow` CLI와 달리 로컬 직접 머지가 아닌 PR 경로로 동작.
+
+[저장소 →](https://github.com/jeongph/git-flow)
 
 ---
 

@@ -30,6 +30,7 @@ Or browse via `/plugin > Discover`.
 | [claude-telemetry](#claude-telemetry) | Real-time session telemetry status line | productivity |
 | [claude-intent](#claude-intent) | Records work cycle intent, alternatives, and trade-offs | productivity |
 | [claude-okf](#claude-okf) | OKF-based LLM-wiki auto-activation | productivity |
+| [git-flow](#git-flow) | Git Flow branching model automated over pull requests | productivity |
 | [pdf-scan-audit](#pdf-scan-audit) | Scan PDF quality audit (Korean docs) | utility |
 | [pdf-toolkit](#pdf-toolkit) | General-purpose PDF manipulation toolkit (Korean docs) | utility |
 | [claude-mbti](#claude-mbti) | Inject an MBTI personality into Claude | fun |
@@ -73,6 +74,16 @@ Records the intent, alternatives, and trade-offs of each work cycle in `docs/int
 Auto-activates an OKF (Open Knowledge Format) based LLM-wiki. Drafts knowledge nodes from code (enrichment), auto-validates and updates the `index` on save, lints for contradictions/stale/orphans, and answers from the wiki (ask). Fuses Karpathy's LLM-wiki pattern with the OKF standard format.
 
 [View repo →](https://github.com/jeongph/claude-okf)
+
+---
+
+### git-flow
+
+> Mistakes don't happen when you create a branch. They happen when you finish one.
+
+Automates the Git Flow branching model over pull requests. Starts branches from the correct base (`/git-flow:feature`, `release`, `hotfix`), computes the next version by analyzing commits since the last tag against Conventional Commits, and advances completion one idempotent step at a time (`/git-flow:finish`). Hooks block direct commits to `main`, `--squash` merges, hotfixes cut from `develop`, and release tags on non-`main` commits. Unlike the archived `git flow` CLI, it integrates through pull requests rather than local direct merges.
+
+[View repo →](https://github.com/jeongph/git-flow)
 
 ---
 
