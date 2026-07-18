@@ -11,7 +11,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/why-is-my-claude-dumb.git",
-        "sha": "cd3c0f4a4ab3c89ed27a80624a27c6fd31684636"
+        "sha": "8c3b8076bda0df6d8dbd44a2a1308849fb5cf720"
       }
     },
     {
@@ -20,7 +20,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-telemetry.git",
-        "sha": "1c9e3a4f3079a929403de7d8196dcc5c55428d7f"
+        "sha": "fda18184a67c0201c8384e6cb9c6a6a5b3140e60"
       }
     },
     {
@@ -29,7 +29,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-scan-audit.git",
-        "sha": "205c96a0dfa1c6504c62a7240c5e5e2564bb0f32"
+        "sha": "141c6df386175f056493f8546a16c4d9ee1984c6"
       }
     },
     {
@@ -38,7 +38,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-toolkit.git",
-        "sha": "ad93bef34c6bf2834f916362d173bf79be9d8b8f"
+        "sha": "e3c5381cb7ea453b18cd9a8596430561c6aa2756"
       }
     },
     {
@@ -47,7 +47,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-intent.git",
-        "sha": "19cad53d62ce6b0df31b47ed792a66b5f659fa79"
+        "sha": "5388594114fb11ecc8af4dccdc766161f2be0744"
       }
     },
     {
@@ -56,7 +56,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-okf.git",
-        "sha": "840f917ed60234ffa63128304c9a942458586de8"
+        "sha": "56cf22274cc28baa9a8de8b3941be261cdeaa7dd"
       }
     },
     {
@@ -65,7 +65,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-mbti.git",
-        "sha": "84b0142d0a276eafbd777bc01a6efd69f8a22c3b"
+        "sha": "adc7b2a9db0885e5884fd651e5f5fab919d4c74e"
       }
     },
     {
