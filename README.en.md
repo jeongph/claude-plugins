@@ -32,6 +32,7 @@ Click a plugin name to open its repository. Installation, usage, and full docume
 | [claude-mbti](https://github.com/jeongph/claude-mbti) | Give Claude a personality 🎭 — injects one of 16 MBTI types (tone + behavior), toggled with `/mbti` | fun |
 | [claude-okf](https://github.com/jeongph/claude-okf) | Code remembers what; the wiki remembers why — OKF-based LLM-wiki with node drafting, auto-validation, lint, and grounded answers | productivity |
 | [claude-telemetry](https://github.com/jeongph/claude-telemetry) | Remaining context, rate limits, effort level, git status, and token usage in a compact color-coded status line | productivity |
+| [claude-tidy](https://github.com/jeongph/claude-tidy) | When the context is gone, so is the memory of what you missed — end-of-session cleanup checks (commits, history, docs, issues, forgotten tasks) and handoff | productivity |
 | [git-flow](https://github.com/jeongph/git-flow) | Mistakes happen when you finish a branch, not when you create one — automates Git Flow over pull requests and blocks violations | productivity |
 | [pdf-scan-audit](https://github.com/jeongph/pdf-scan-audit) | Detects missing pages, ordering, rotation, cropping, and resolution defects in scanned PDFs (Korean docs) | utility |
 | [pdf-toolkit](https://github.com/jeongph/pdf-toolkit) | General-purpose PDF toolkit — rotate, delete, reorder, extract, merge, split, and edit metadata, non-destructively (Korean docs) | utility |

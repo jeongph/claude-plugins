@@ -56,7 +56,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-okf.git",
-        "sha": "56cf22274cc28baa9a8de8b3941be261cdeaa7dd"
+        "sha": "d87d2c7d06bbed92c0e7174d0cc16f5bd2637c6d"
       }
     },
     {
@@ -75,6 +75,15 @@
         "source": "url",
         "url": "https://github.com/jeongph/git-flow.git",
         "sha": "b7dee6b2d80051f3b8e9e3a5ff3b17f8be3eb602"
+      }
+    },
+    {
+      "name": "claude-tidy",
+      "description": "세션 마무리 정리와 핸드오프 — 커밋·히스토리·문서·이슈 누락 검사, 워크트리 문서 이관, 다음 세션 인계 노트 생성",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/claude-tidy.git",
+        "sha": "80a1d58096169fc0ceddad679c51269cccdb3408"
       }
     }
   ]
