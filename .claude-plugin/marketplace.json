@@ -11,7 +11,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/why-is-my-claude-dumb.git",
-        "sha": "8c3b8076bda0df6d8dbd44a2a1308849fb5cf720"
+        "sha": "9051261fc03a98e2b37fd10aa88fe917accd514c"
       }
     },
     {
@@ -20,7 +20,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-telemetry.git",
-        "sha": "fda18184a67c0201c8384e6cb9c6a6a5b3140e60"
+        "sha": "c3a2a168cc340648eeb842db3878de0d3b1ce0b9"
       }
     },
     {
@@ -29,7 +29,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-scan-audit.git",
-        "sha": "141c6df386175f056493f8546a16c4d9ee1984c6"
+        "sha": "eadf7fd94f0f7c7ebe89f2c6ba47792512ef22a6"
       }
     },
     {
@@ -38,7 +38,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-toolkit.git",
-        "sha": "e3c5381cb7ea453b18cd9a8596430561c6aa2756"
+        "sha": "3b90ab6fdafdeaa5cabd89a676c36a02bfba0a0e"
       }
     },
     {
@@ -47,7 +47,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-intent.git",
-        "sha": "3c6c383058f1ab8b8298773ad268f4a740f3778a"
+        "sha": "2be3d198f28ebb335d2737c1c11c426c17b4b352"
       }
     },
     {
@@ -56,7 +56,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-okf.git",
-        "sha": "1fbabc3c21a4091cd6debfedf061353af3d5ec10"
+        "sha": "5fcdc3f1535d9ce9b3379cf273e10a7e38bfe28b"
       }
     },
     {
@@ -65,7 +65,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-mbti.git",
-        "sha": "adc7b2a9db0885e5884fd651e5f5fab919d4c74e"
+        "sha": "15794a9c48b7174229dbe1b70a54aba20d7461e0"
       }
     },
     {
@@ -74,7 +74,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/git-flow.git",
-        "sha": "b7dee6b2d80051f3b8e9e3a5ff3b17f8be3eb602"
+        "sha": "21e0851f505304ebcdd2ab89643662b4c23b9760"
       }
     },
     {
@@ -83,7 +83,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-tidy.git",
-        "sha": "80a1d58096169fc0ceddad679c51269cccdb3408"
+        "sha": "1f8bdb1766ccbb75fab002f741090882198d731a"
       }
     }
   ]
