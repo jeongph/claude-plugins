@@ -1,0 +1,121 @@
+name: Auto release (reusable)
+
+# 플러그인 레포들이 공유하는 릴리스 워크플로우.
+#
+# 커밋 타입에서 다음 버전을 정해 plugin.json 을 올리고, 태그와 Release 를 만든다.
+# 마켓플레이스는 plugin.json 의 version 으로 플러그인을 핀하므로, version 을
+# 올리지 않으면 새 커밋을 아무리 push 해도 기존 사용자에게 전달되지 않는다.
+# 그 범프를 사람 손에 맡기지 않고 커밋 컨벤션에서 자동으로 끌어낸다.
+#
+# 판정 규칙은 .github/scripts/next-version.sh 에 있고 같은 폴더의 테스트가
+# 지킨다. 규칙을 바꿀 때는 이 레포 한 곳만 고치면 모든 플러그인에 반영된다.
+#
+# 호출하는 쪽(각 플러그인 레포)은 이렇게만 두면 된다.
+#
+#   name: Auto release
+#   on:
+#     push:
+#       branches: [main]
+#     workflow_dispatch:
+#   jobs:
+#     release:
+#       uses: jeongph/claude-plugins/.github/workflows/auto-release.yml@main
+#       permissions:
+#         contents: write
+on:
+  workflow_call:
+    inputs:
+      manifest:
+        description: 플러그인 매니페스트 경로
+        type: string
+        default: .claude-plugin/plugin.json
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout plugin repo
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0   # 직전 태그부터의 커밋과 --generate-notes 에 전체 이력이 필요하다
+
+      # ref 는 고정한다. 호출자가 넘긴 값을 checkout 의 ref 로 흘리면
+      # 임의의 ref 를 끌어올 수 있는 통로가 된다.
+      - name: Checkout release tooling
+        uses: actions/checkout@v5
+        with:
+          repository: jeongph/claude-plugins
+          ref: main
+          path: .release-tooling
+
+      - name: Test version resolver
+        run: bash .release-tooling/.github/scripts/next-version.test.sh
+
+      - name: Resolve next version
+        id: v
+        env:
+          MANIFEST: ${{ inputs.manifest }}
+        run: |
+          if [ ! -f "$MANIFEST" ]; then
+            echo "매니페스트가 없다: $MANIFEST — 건너뛴다"
+            echo "release=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          CURRENT=$(jq -r '.version // empty' "$MANIFEST")
+          if [ -z "$CURRENT" ]; then
+            echo "$MANIFEST 에 version 이 없다 — 건너뛴다"
+            echo "release=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # 직전 릴리스 지점은 현재 버전의 태그다. 아직 없으면 전체 이력을 본다.
+          if git rev-parse "v$CURRENT" >/dev/null 2>&1; then
+            RANGE="v$CURRENT..HEAD"
+          else
+            RANGE="HEAD"
+          fi
+          echo "대상 범위: $RANGE (현재 $CURRENT)"
+
+          set +e
+          NEXT=$(git log --format=%B%x00 "$RANGE" | bash .release-tooling/.github/scripts/next-version.sh "$CURRENT")
+          rc=$?
+          set -e
+
+          if [ "$rc" -eq 10 ]; then
+            echo "릴리스할 변경이 없다 (docs·chore·ci 등만 쌓임) — 건너뛴다"
+            echo "release=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$rc" -ne 0 ] || [ -z "$NEXT" ]; then
+            echo "버전 계산 실패 (exit $rc)" >&2
+            exit 1
+          fi
+          if git rev-parse "v$NEXT" >/dev/null 2>&1; then
+            echo "v$NEXT 태그가 이미 있다 — 건너뛴다"
+            echo "release=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "$CURRENT -> $NEXT"
+          echo "next=$NEXT" >> "$GITHUB_OUTPUT"
+          echo "release=true" >> "$GITHUB_OUTPUT"
+
+      - name: Bump, tag and release
+        if: steps.v.outputs.release == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEXT: ${{ steps.v.outputs.next }}
+          MANIFEST: ${{ inputs.manifest }}
+        run: |
+          # jq 로 다시 쓰면 파일 전체가 재포맷되므로 version 값만 바꾼다.
+          sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$NEXT\"/" "$MANIFEST"
+          test "$(jq -r .version "$MANIFEST")" = "$NEXT"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$MANIFEST"
+          git commit -m "chore(release): $NEXT"
+          git push
+
+          gh release create "v$NEXT" --title "v$NEXT" --generate-notes
