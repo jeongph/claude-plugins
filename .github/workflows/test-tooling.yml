@@ -1,0 +1,19 @@
+name: Test release tooling
+
+# next-version.sh 는 모든 플러그인 레포가 공유한다. 여기서 깨지면 8개 레포의
+# 릴리스가 한꺼번에 잘못되므로, 스크립트가 바뀔 때마다 테스트를 돌린다.
+on:
+  push:
+    branches: [main]
+    paths: ['.github/scripts/**', '.github/workflows/test-tooling.yml']
+  pull_request:
+    paths: ['.github/scripts/**', '.github/workflows/test-tooling.yml']
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Run version resolver tests
+        run: bash .github/scripts/next-version.test.sh
