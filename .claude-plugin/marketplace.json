@@ -11,7 +11,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/why-is-my-claude-dumb.git",
-        "sha": "723f40ca6d682e1d5402658e7e23e6184721106b"
+        "sha": "7b3dbe7b433ec406fbe970eb0db4b0ecf428d99a"
       }
     },
     {
@@ -29,7 +29,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-scan-audit.git",
-        "sha": "7970cd1130329d5e198ae58fca191b35101a4c07"
+        "sha": "238266d2c9c8a0f0977f83571eb3840b5880566f"
       }
     },
     {
@@ -38,7 +38,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-toolkit.git",
-        "sha": "92945bf14267a70d991e7cda9ee6d78dd004ff22"
+        "sha": "9f9464b69df8ebb65b271f2a0e02dcb23fe8cb93"
       }
     },
     {
@@ -47,7 +47,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-intent.git",
-        "sha": "ab8a06a5694c14111d60ab90476ad88008c6d7c6"
+        "sha": "1f2452b897b0a140e59d42d23ce02e78a41f65c3"
       }
     },
     {
@@ -56,7 +56,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-okf.git",
-        "sha": "08480f1ded9c31a2bae25f1fa81dd56a0a5e6636"
+        "sha": "ad40f862df044bafc88159e693f35f4d296e924c"
       }
     },
     {
@@ -65,7 +65,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-mbti.git",
-        "sha": "a318bf14164375eddebb135e3fd4ffc6ae31656e"
+        "sha": "b18f366fa1e192787b00269372937a149525fc92"
       }
     },
     {
@@ -74,7 +74,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/git-flow.git",
-        "sha": "5f27fb0385cd99b81e48edfd33b506cdabc375e4"
+        "sha": "c303ee3108c92908a6013700296394f00a5aba2f"
       }
     },
     {
@@ -83,7 +83,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-tidy.git",
-        "sha": "cf40e1989382612a71fd0e3fe69747f646860dd0"
+        "sha": "4b6345fa27d69f3f3c406f81f4e21f5993cd75dc"
       }
     }
   ]
