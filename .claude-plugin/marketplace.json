@@ -47,7 +47,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-intent.git",
-        "sha": "1f2452b897b0a140e59d42d23ce02e78a41f65c3"
+        "sha": "f5eb10d39859ec657e21b53ea869249c6930686c"
       }
     },
     {
@@ -56,7 +56,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-okf.git",
-        "sha": "ad40f862df044bafc88159e693f35f4d296e924c"
+        "sha": "a0731f55a2bc528f1e590ecc507cc291dad17240"
       }
     },
     {
