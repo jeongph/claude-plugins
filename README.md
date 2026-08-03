@@ -30,7 +30,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 |----------|------|----------|
 | [claude-intent](https://github.com/jeongph/claude-intent) | 코드는 의도의 그림자다 — 작업 사이클의 의도·대안·트레이드오프를 `docs/intent/`에 기록하고 코드의 "왜"를 역추적 | productivity |
 | [claude-mbti](https://github.com/jeongph/claude-mbti) | Claude에게 성격을 준다 🎭 — 16가지 MBTI 성격(말투+행동 성향)을 주입, `/mbti`로 켜고 끄고 전환 | fun |
-| [claude-okf](https://github.com/jeongph/claude-okf) | 코드는 무엇을, 위키는 왜를 기억한다 — OKF 기반 LLM-wiki 자동 활성화. 노드 초안 생성·자동 검증·lint·grounded 답변 | productivity |
+| [claude-wiki](https://github.com/jeongph/claude-wiki) | 코드는 무엇을, 위키는 왜를 기억한다 — OKF 기반 LLM-wiki 자동 활성화. 노드 초안 생성·자동 검증·lint·grounded 답변 | productivity |
 | [claude-telemetry](https://github.com/jeongph/claude-telemetry) | 남은 컨텍스트·요청 제한·effort·git 상태·토큰 사용량을 컴팩트한 컬러 상태바로 표시 | productivity |
 | [claude-tidy](https://github.com/jeongph/claude-tidy) | 컨텍스트가 사라지면 빠뜨렸다는 사실도 사라진다 — 세션 마무리 정리(커밋·히스토리·문서·이슈·잊힌 작업 검사)와 핸드오프 | productivity |
 | [git-flow](https://github.com/jeongph/git-flow) | 실수는 브랜치를 만들 때가 아니라 끝낼 때 난다 — Git Flow 브랜치 모델을 PR 기반으로 자동화하고 위반을 차단 | productivity |
