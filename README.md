@@ -28,6 +28,7 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 
 | 플러그인 | 설명 | 카테고리 |
 |----------|------|----------|
+| [agentic-devflow](https://github.com/jeongph/agentic-devflow) | 이슈 하나를 PR까지, 끊겨도 이어서 — 이슈 확인·범위 확정·계획·구현·리뷰(opus)·반영·PR 생성을 커맨드 하나로 진행하는 멱등 워크플로우 | productivity |
 | [claude-intent](https://github.com/jeongph/claude-intent) | 코드는 의도의 그림자다 — 작업 사이클의 의도·대안·트레이드오프를 `docs/intent/`에 기록하고 코드의 "왜"를 역추적 | productivity |
 | [claude-mbti](https://github.com/jeongph/claude-mbti) | Claude에게 성격을 준다 🎭 — 16가지 MBTI 성격(말투+행동 성향)을 주입, `/mbti`로 켜고 끄고 전환 | fun |
 | [claude-wiki](https://github.com/jeongph/claude-wiki) | 코드는 무엇을, 위키는 왜를 기억한다 — OKF 기반 LLM-wiki 자동 활성화. 노드 초안 생성·자동 검증·lint·grounded 답변 | productivity |

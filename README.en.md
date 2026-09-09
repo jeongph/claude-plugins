@@ -28,6 +28,7 @@ Click a plugin name to open its repository. Installation, usage, and full docume
 
 | Plugin | Description | Category |
 |--------|-------------|----------|
+| [agentic-devflow](https://github.com/jeongph/agentic-devflow) | One issue to one PR, resumable — intake, scoping, planning, implementation, opus review, fixes and PR creation as a single idempotent command | productivity |
 | [claude-intent](https://github.com/jeongph/claude-intent) | Code is the shadow of intent — records each work cycle's intent, alternatives, and trade-offs in `docs/intent/` so you can trace the "why" | productivity |
 | [claude-mbti](https://github.com/jeongph/claude-mbti) | Give Claude a personality 🎭 — injects one of 16 MBTI types (tone + behavior), toggled with `/mbti` | fun |
 | [claude-wiki](https://github.com/jeongph/claude-wiki) | Code remembers what; the wiki remembers why — OKF-based LLM-wiki with node drafting, auto-validation, lint, and grounded answers | productivity |
