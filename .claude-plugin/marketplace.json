@@ -4,6 +4,9 @@
     "name": "jeongph"
   },
   "description": "jeongph가 관리하는 플러그인 모음",
+  "allowCrossMarketplaceDependenciesOn": [
+    "claude-plugins-official"
+  ],
   "plugins": [
     {
       "name": "why-is-my-claude-dumb",
@@ -84,6 +87,15 @@
         "source": "url",
         "url": "https://github.com/jeongph/claude-tidy.git",
         "sha": "4b6345fa27d69f3f3c406f81f4e21f5993cd75dc"
+      }
+    },
+    {
+      "name": "agentic-devflow",
+      "description": "GitHub 이슈 하나를 PR까지 — 범위 확정·계획·구현·리뷰(opus)·반영·PR 생성을 커맨드 하나로, 중단돼도 이어서",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jeongph/agentic-devflow.git",
+        "sha": "3e3f1366d0b4ed69bb279abfb4599c7d0bdaf47b"
       }
     }
   ]
