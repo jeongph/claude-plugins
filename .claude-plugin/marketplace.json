@@ -14,7 +14,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/why-is-my-claude-dumb.git",
-        "sha": "7b3dbe7b433ec406fbe970eb0db4b0ecf428d99a"
+        "sha": "d5af1aa97010361128e46db9235be24dd17a90c7"
       }
     },
     {
@@ -23,7 +23,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-telemetry.git",
-        "sha": "206a56b79d0d58aebccf24a4d867618d1b6a68db"
+        "sha": "3e1d21257f5600cb07819e1fd332c6db93cd24b2"
       }
     },
     {
@@ -32,7 +32,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-scan-audit.git",
-        "sha": "238266d2c9c8a0f0977f83571eb3840b5880566f"
+        "sha": "aa286f4ec39c0261e71b0f7714f104c6b6524e65"
       }
     },
     {
@@ -41,7 +41,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-toolkit.git",
-        "sha": "9f9464b69df8ebb65b271f2a0e02dcb23fe8cb93"
+        "sha": "2bb13a6037c4ab3c757a779bb09fa61e322c6ffb"
       }
     },
     {
@@ -50,7 +50,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-intent.git",
-        "sha": "f5eb10d39859ec657e21b53ea869249c6930686c"
+        "sha": "729d27879238377956792083257d220a9b138a36"
       }
     },
     {
@@ -59,7 +59,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-wiki.git",
-        "sha": "7986c8eec1bb7ccf30aeaf5cb751da7ad8d985e4"
+        "sha": "bc31a558c95ce531589b72860646e97488ee7fb9"
       }
     },
     {
@@ -68,7 +68,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-mbti.git",
-        "sha": "b18f366fa1e192787b00269372937a149525fc92"
+        "sha": "9d1c78a7a94d5bdc6874c0b7550d22c200c0d6ae"
       }
     },
     {
@@ -77,7 +77,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/git-flow.git",
-        "sha": "c303ee3108c92908a6013700296394f00a5aba2f"
+        "sha": "2c06b0418189b24efb68a9f7bed445436587e2f7"
       }
     },
     {
@@ -86,7 +86,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-tidy.git",
-        "sha": "4b6345fa27d69f3f3c406f81f4e21f5993cd75dc"
+        "sha": "490b6cd28e67b71fdbfc3a96d260e0b94ce97003"
       }
     },
     {
@@ -95,7 +95,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/agentic-devflow.git",
-        "sha": "3e3f1366d0b4ed69bb279abfb4599c7d0bdaf47b"
+        "sha": "f047c52c1a72f99f6e098b32f565ecb40cfbebbf"
       }
     }
   ]
