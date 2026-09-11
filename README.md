@@ -2,9 +2,9 @@
 
 [English](README.en.md)
 
-Claude Code를 위한 플러그인 디렉토리입니다.
+직접 만들어 사용하는 Claude Code 플러그인을 모았습니다.
 
-> **참고:** 플러그인을 설치하기 전에 각 플러그인의 저장소를 확인하세요. 각 플러그인에 포함된 MCP 서버, 파일, 기타 소프트웨어는 개별 저장소에서 관리됩니다. 자세한 내용은 각 플러그인의 홈페이지를 참조하세요.
+각 플러그인의 기능, 설치 방법, 필요한 도구는 아래 저장소 링크에서 확인할 수 있습니다.
 
 ## 설치
 
@@ -28,16 +28,16 @@ Claude Code를 위한 플러그인 디렉토리입니다.
 
 | 플러그인 | 설명 | 카테고리 |
 |----------|------|----------|
-| [agentic-devflow](https://github.com/jeongph/agentic-devflow) | 이슈 하나를 PR까지, 끊겨도 이어서 — 이슈 확인·범위 확정·계획·구현·리뷰(opus)·반영·PR 생성을 커맨드 하나로 진행하는 멱등 워크플로우 | productivity |
-| [claude-intent](https://github.com/jeongph/claude-intent) | 코드는 의도의 그림자다 — 작업 사이클의 의도·대안·트레이드오프를 `docs/intent/`에 기록하고 코드의 "왜"를 역추적 | productivity |
-| [claude-mbti](https://github.com/jeongph/claude-mbti) | Claude에게 성격을 준다 🎭 — 16가지 MBTI 성격(말투+행동 성향)을 주입, `/mbti`로 켜고 끄고 전환 | fun |
-| [claude-wiki](https://github.com/jeongph/claude-wiki) | 코드는 무엇을, 위키는 왜를 기억한다 — OKF 기반 LLM-wiki 자동 활성화. 노드 초안 생성·자동 검증·lint·grounded 답변 | productivity |
-| [claude-telemetry](https://github.com/jeongph/claude-telemetry) | 남은 컨텍스트·요청 제한·effort·git 상태·토큰 사용량을 컴팩트한 컬러 상태바로 표시 | productivity |
-| [claude-tidy](https://github.com/jeongph/claude-tidy) | 컨텍스트가 사라지면 빠뜨렸다는 사실도 사라진다 — 세션 마무리 정리(커밋·히스토리·문서·이슈·잊힌 작업 검사)와 핸드오프 | productivity |
-| [git-flow](https://github.com/jeongph/git-flow) | 실수는 브랜치를 만들 때가 아니라 끝낼 때 난다 — Git Flow 브랜치 모델을 PR 기반으로 자동화하고 위반을 차단 | productivity |
-| [pdf-scan-audit](https://github.com/jeongph/pdf-scan-audit) | 스캔 PDF의 페이지 누락·순서·회전·잘림·해상도 결함을 자동 검출하고 표로 보고 | utility |
-| [pdf-toolkit](https://github.com/jeongph/pdf-toolkit) | 범용 PDF 수정 도구 — 회전·삭제·순서변경·추출·병합·분할·메타데이터 편집을 비파괴 방식으로 | utility |
-| [why-is-my-claude-dumb](https://github.com/jeongph/why-is-my-claude-dumb) | Why is my Claude so dumb? Let's find out — 로컬 환경을 분석해 공식 마켓플레이스의 누락 플러그인을 추천 | productivity |
+| [agentic-devflow](https://github.com/jeongph/agentic-devflow) | GitHub 이슈를 바탕으로 구현, 리뷰, PR 생성을 진행합니다. 중단된 작업도 이어서 진행할 수 있습니다. | productivity |
+| [claude-intent](https://github.com/jeongph/claude-intent) | 코드를 왜 이렇게 작성했는지, 어떤 대안을 검토했는지 기록하고 나중에 찾아볼 수 있습니다. | productivity |
+| [claude-mbti](https://github.com/jeongph/claude-mbti) | Claude의 말투와 행동 성향을 16가지 MBTI 유형 중 하나로 설정합니다. | fun |
+| [claude-telemetry](https://github.com/jeongph/claude-telemetry) | 남은 컨텍스트와 사용 한도, 추론 수준, Git 상태, 토큰 수를 터미널 하단에 표시합니다. | productivity |
+| [claude-tidy](https://github.com/jeongph/claude-tidy) | 작업을 마칠 때 빠진 커밋, 문서, 이슈 처리를 확인하고 다음 세션에 넘길 내용을 정리합니다. | productivity |
+| [claude-wiki](https://github.com/jeongph/claude-wiki) | 코드와 문서를 바탕으로 위키를 작성하고, 내용을 점검하거나 위키에서 답을 찾습니다. | productivity |
+| [git-flow](https://github.com/jeongph/git-flow) | Git Flow에 따라 브랜치를 만들고 PR로 병합합니다. 잘못된 분기나 태그 생성도 확인합니다. | productivity |
+| [pdf-scan-audit](https://github.com/jeongph/pdf-scan-audit) | 스캔한 PDF에서 빠진 페이지, 잘못된 순서와 회전, 잘림, 해상도 문제를 찾아 결과를 정리합니다. | utility |
+| [pdf-toolkit](https://github.com/jeongph/pdf-toolkit) | PDF 페이지를 회전하거나 삭제하고, 문서를 합치거나 나눕니다. 기본적으로 원본은 그대로 둡니다. | utility |
+| [why-is-my-claude-dumb](https://github.com/jeongph/why-is-my-claude-dumb) | 개발 환경과 설치된 도구를 살펴보고, 작업에 도움이 될 공식 마켓플레이스 플러그인을 추천합니다. | productivity |
 
 ## 기여
 

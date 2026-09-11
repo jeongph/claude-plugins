@@ -2,9 +2,9 @@
 
 [한국어](README.md)
 
-A plugin directory for Claude Code.
+Claude Code plugins I build and use.
 
-> **Note:** Please review each plugin's repository before installing. MCP servers, files, and other software included in each plugin are managed in their respective repositories. See each plugin's homepage for details.
+Each repository below describes what the plugin does, how to install it, and which tools it needs.
 
 ## Installation
 
@@ -28,16 +28,16 @@ Click a plugin name to open its repository. Installation, usage, and full docume
 
 | Plugin | Description | Category |
 |--------|-------------|----------|
-| [agentic-devflow](https://github.com/jeongph/agentic-devflow) | One issue to one PR, resumable — intake, scoping, planning, implementation, opus review, fixes and PR creation as a single idempotent command | productivity |
-| [claude-intent](https://github.com/jeongph/claude-intent) | Code is the shadow of intent — records each work cycle's intent, alternatives, and trade-offs in `docs/intent/` so you can trace the "why" | productivity |
-| [claude-mbti](https://github.com/jeongph/claude-mbti) | Give Claude a personality 🎭 — injects one of 16 MBTI types (tone + behavior), toggled with `/mbti` | fun |
-| [claude-wiki](https://github.com/jeongph/claude-wiki) | Code remembers what; the wiki remembers why — OKF-based LLM-wiki with node drafting, auto-validation, lint, and grounded answers | productivity |
-| [claude-telemetry](https://github.com/jeongph/claude-telemetry) | Remaining context, rate limits, effort level, git status, and token usage in a compact color-coded status line | productivity |
-| [claude-tidy](https://github.com/jeongph/claude-tidy) | When the context is gone, so is the memory of what you missed — end-of-session cleanup checks (commits, history, docs, issues, forgotten tasks) and handoff | productivity |
-| [git-flow](https://github.com/jeongph/git-flow) | Mistakes happen when you finish a branch, not when you create one — automates Git Flow over pull requests and blocks violations | productivity |
-| [pdf-scan-audit](https://github.com/jeongph/pdf-scan-audit) | Detects missing pages, ordering, rotation, cropping, and resolution defects in scanned PDFs (Korean docs) | utility |
-| [pdf-toolkit](https://github.com/jeongph/pdf-toolkit) | General-purpose PDF toolkit — rotate, delete, reorder, extract, merge, split, and edit metadata, non-destructively (Korean docs) | utility |
-| [why-is-my-claude-dumb](https://github.com/jeongph/why-is-my-claude-dumb) | Why is my Claude so dumb? Let's find out — analyzes your environment and recommends missing official-marketplace plugins | productivity |
+| [agentic-devflow](https://github.com/jeongph/agentic-devflow) | Works from a GitHub issue through implementation, review, and PR creation. Can resume interrupted work. | productivity |
+| [claude-intent](https://github.com/jeongph/claude-intent) | Records why code was written a certain way and which alternatives were considered, so you can look them up later. | productivity |
+| [claude-mbti](https://github.com/jeongph/claude-mbti) | Sets Claude’s tone and behavior to one of 16 MBTI types. | fun |
+| [claude-telemetry](https://github.com/jeongph/claude-telemetry) | Shows remaining context and usage limits, effort level, Git status, and token counts at the bottom of the terminal. | productivity |
+| [claude-tidy](https://github.com/jeongph/claude-tidy) | Checks for missed commits, docs, and issue updates, then prepares notes for the next session. | productivity |
+| [claude-wiki](https://github.com/jeongph/claude-wiki) | Builds a wiki from code and documents, checks its contents, and finds answers in the wiki. | productivity |
+| [git-flow](https://github.com/jeongph/git-flow) | Creates branches and merges through PRs using Git Flow. Checks for incorrect branching and tagging. | productivity |
+| [pdf-scan-audit](https://github.com/jeongph/pdf-scan-audit) | Checks scanned PDFs for missing pages, incorrect order or rotation, cropping, and resolution issues. Korean documentation. | utility |
+| [pdf-toolkit](https://github.com/jeongph/pdf-toolkit) | Rotates or deletes PDF pages, and merges or splits documents. Keeps the original files by default. Korean documentation. | utility |
+| [why-is-my-claude-dumb](https://github.com/jeongph/why-is-my-claude-dumb) | Checks your development environment and installed tools, then suggests official marketplace plugins that may help with your work. | productivity |
 
 ## Contributing
 

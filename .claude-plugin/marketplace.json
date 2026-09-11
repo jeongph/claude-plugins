@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "why-is-my-claude-dumb",
-      "description": "Analyze your environment and recommend official marketplace plugins to make Claude Code smarter",
+      "description": "개발 환경과 설치된 도구를 살펴보고, 작업에 도움이 될 공식 마켓플레이스 플러그인을 추천합니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/why-is-my-claude-dumb.git",
@@ -19,7 +19,7 @@
     },
     {
       "name": "claude-telemetry",
-      "description": "Customizable multi-line status line for Claude Code — real-time session telemetry in your terminal",
+      "description": "남은 컨텍스트와 사용 한도, 추론 수준, Git 상태, 토큰 수를 터미널 하단에 표시합니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-telemetry.git",
@@ -28,7 +28,7 @@
     },
     {
       "name": "pdf-scan-audit",
-      "description": "스캔 PDF 품질 정밀 진단 - 페이지 누락·순서·회전·잘림·해상도 결함을 자동 검출하고 표로 보고합니다",
+      "description": "스캔한 PDF에서 빠진 페이지, 잘못된 순서와 회전, 잘림, 해상도 문제를 찾아 결과를 정리합니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-scan-audit.git",
@@ -37,7 +37,7 @@
     },
     {
       "name": "pdf-toolkit",
-      "description": "범용 PDF 수정 도구 - 페이지 회전·삭제·순서변경·추출, PDF 병합·분할, 메타데이터 편집을 안전한 비파괴 방식으로 수행합니다",
+      "description": "PDF 페이지를 회전하거나 삭제하고, 문서를 합치거나 나눕니다. 기본적으로 원본은 그대로 둡니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/pdf-toolkit.git",
@@ -46,7 +46,7 @@
     },
     {
       "name": "claude-intent",
-      "description": "작업 사이클의 의도·대안·트레이드오프를 docs/intent/에 기록하고 역추적하는 Claude Code 플러그인",
+      "description": "코드를 왜 이렇게 작성했는지, 어떤 대안을 검토했는지 기록하고 나중에 찾아볼 수 있습니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-intent.git",
@@ -55,7 +55,7 @@
     },
     {
       "name": "claude-wiki",
-      "description": "OKF 기반 LLM-wiki 자동 활성화 — 코드에서 지식 노드를 작성·검증·lint·enrichment",
+      "description": "코드와 문서를 바탕으로 위키를 작성하고, 내용을 점검하거나 위키에서 답을 찾습니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-wiki.git",
@@ -64,7 +64,7 @@
     },
     {
       "name": "claude-mbti",
-      "description": "Claude Code 세션에 16가지 MBTI 성격(말투+행동 성향)을 주입 — /mbti 명령으로 켜고 끄고 전환",
+      "description": "Claude의 말투와 행동 성향을 16가지 MBTI 유형 중 하나로 설정합니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-mbti.git",
@@ -73,7 +73,7 @@
     },
     {
       "name": "git-flow",
-      "description": "Git Flow 브랜치 모델을 PR 기반으로 자동화 — feature·release·hotfix 절차 실행, 커밋에서 다음 버전 추론, 모델 위반 차단",
+      "description": "Git Flow에 따라 브랜치를 만들고 PR로 병합합니다. 잘못된 분기나 태그 생성도 확인합니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/git-flow.git",
@@ -82,7 +82,7 @@
     },
     {
       "name": "claude-tidy",
-      "description": "세션 마무리 정리와 핸드오프 — 커밋·히스토리·문서·이슈 누락 검사, 워크트리 문서 이관, 다음 세션 인계 노트 생성",
+      "description": "작업을 마칠 때 빠진 커밋, 문서, 이슈 처리를 확인하고 다음 세션에 넘길 내용을 정리합니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/claude-tidy.git",
@@ -91,7 +91,7 @@
     },
     {
       "name": "agentic-devflow",
-      "description": "GitHub 이슈 하나를 PR까지 — 범위 확정·계획·구현·리뷰(opus)·반영·PR 생성을 커맨드 하나로, 중단돼도 이어서",
+      "description": "GitHub 이슈를 바탕으로 구현, 리뷰, PR 생성을 진행합니다. 중단된 작업도 이어서 진행할 수 있습니다.",
       "source": {
         "source": "url",
         "url": "https://github.com/jeongph/agentic-devflow.git",
