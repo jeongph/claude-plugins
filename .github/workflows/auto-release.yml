@@ -2,12 +2,12 @@ name: Auto release (reusable)
 
 # 플러그인 레포들이 공유하는 릴리스 워크플로우.
 #
-# 커밋 타입에서 다음 버전을 정해 plugin.json 을 올리고, 태그와 Release 를 만든다.
-# 마켓플레이스는 plugin.json 의 version 으로 플러그인을 핀하므로, version 을
-# 올리지 않으면 새 커밋을 아무리 push 해도 기존 사용자에게 전달되지 않는다.
+# 커밋 타입에서 다음 버전을 정해 plugin.json을 올리고, 태그와 Release를 만든다.
+# 마켓플레이스는 plugin.json의 version으로 플러그인을 고정하므로, version을
+# 올리지 않으면 새 커밋을 아무리 푸시해도 기존 사용자에게 전달되지 않는다.
 # 그 범프를 사람 손에 맡기지 않고 커밋 컨벤션에서 자동으로 끌어낸다.
 #
-# 판정 규칙은 .github/scripts/next-version.sh 에 있고 같은 폴더의 테스트가
+# 판정 규칙은 .github/scripts/next-version.sh에 있고 같은 폴더의 테스트가
 # 지킨다. 규칙을 바꿀 때는 이 레포 한 곳만 고치면 모든 플러그인에 반영된다.
 #
 # 호출하는 쪽(각 플러그인 레포)은 이렇게만 두면 된다.
@@ -37,10 +37,10 @@ jobs:
       - name: Checkout plugin repo
         uses: actions/checkout@v5
         with:
-          fetch-depth: 0   # 직전 태그부터의 커밋과 --generate-notes 에 전체 이력이 필요하다
+          fetch-depth: 0   # 직전 태그부터의 커밋과 --generate-notes에 전체 이력이 필요하다
 
-      # ref 는 고정한다. 호출자가 넘긴 값을 checkout 의 ref 로 흘리면
-      # 임의의 ref 를 끌어올 수 있는 통로가 된다.
+      # ref는 고정한다. 호출자가 넘긴 값을 checkout의 ref로 흘리면
+      # 임의의 ref를 끌어올 수 있는 통로가 된다.
       - name: Checkout release tooling
         uses: actions/checkout@v5
         with:
@@ -57,14 +57,14 @@ jobs:
           MANIFEST: ${{ inputs.manifest }}
         run: |
           if [ ! -f "$MANIFEST" ]; then
-            echo "매니페스트가 없다: $MANIFEST — 건너뛴다"
+            echo "매니페스트가 없어 건너뛴다: $MANIFEST"
             echo "release=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           CURRENT=$(jq -r '.version // empty' "$MANIFEST")
           if [ -z "$CURRENT" ]; then
-            echo "$MANIFEST 에 version 이 없다 — 건너뛴다"
+            echo "${MANIFEST}에 version이 없어 건너뛴다"
             echo "release=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -83,7 +83,7 @@ jobs:
           set -e
 
           if [ "$rc" -eq 10 ]; then
-            echo "릴리스할 변경이 없다 (docs·chore·ci 등만 쌓임) — 건너뛴다"
+            echo "릴리스할 변경이 없어 건너뛴다 (docs, chore, ci 등만 쌓임)"
             echo "release=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -92,7 +92,7 @@ jobs:
             exit 1
           fi
           if git rev-parse "v$NEXT" >/dev/null 2>&1; then
-            echo "v$NEXT 태그가 이미 있다 — 건너뛴다"
+            echo "v$NEXT 태그가 이미 있어 건너뛴다"
             echo "release=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -108,7 +108,7 @@ jobs:
           NEXT: ${{ steps.v.outputs.next }}
           MANIFEST: ${{ inputs.manifest }}
         run: |
-          # jq 로 다시 쓰면 파일 전체가 재포맷되므로 version 값만 바꾼다.
+          # jq로 다시 쓰면 파일 전체가 재포맷되므로 version 값만 바꾼다.
           sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$NEXT\"/" "$MANIFEST"
           test "$(jq -r .version "$MANIFEST")" = "$NEXT"
 
