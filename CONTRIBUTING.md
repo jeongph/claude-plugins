@@ -7,8 +7,8 @@
 | 이 저장소 (claude-plugins) | 각 플러그인 저장소 |
 |---|---|
 | 마켓플레이스 정의 (`.claude-plugin/marketplace.json`) | 플러그인 manifest (`.claude-plugin/plugin.json`) |
-| 목록 표 (`README.md` · `README.en.md`) | 코드 (`skills/`·`hooks/`·`agents/`) |
-| 마켓플레이스 설치 안내 | 설치·사용법·옵션·예시 (`README.md`) |
+| 목록 표 (`README.md`, `README.en.md`) | 코드 (`skills/`, `hooks/`, `agents/`) |
+| 마켓플레이스 설치 안내 | 설치, 사용법, 옵션, 예시 (`README.md`) |
 
 사용법, 명령 목록, 설정 옵션은 각 플러그인 저장소의 README에서 관리한다. 같은 내용을 이곳에 복사하면 수정 시 두 문서가 달라질 수 있다. 이 저장소의 목록 표에는 플러그인의 기능 요약과 저장소 링크만 적는다.
 
@@ -40,7 +40,7 @@ claude plugin validate .    # 플러그인 저장소에서 실행
 }
 ```
 
-`name`은 플러그인의 `plugin.json`의 `name`과 **반드시 일치**해야 한다. 이 값이 설치 이름(`<name>@jeongph-claude-plugins`)이자 호출 네임스페이스(`/<name>:<skill>`)가 된다.
+`name`은 플러그인 `plugin.json`의 `name`과 **반드시 일치**해야 한다. 이 값이 설치 이름(`<name>@jeongph-claude-plugins`)이자 호출 네임스페이스(`/<name>:<skill>`)가 된다.
 
 초기 SHA는 실제 원격 HEAD를 넣는다.
 
@@ -56,11 +56,11 @@ git ls-remote https://github.com/jeongph/<플러그인명>.git HEAD | cut -f1
 | [<플러그인명>](https://github.com/jeongph/<플러그인명>) | <기능 요약> | <카테고리> |
 ```
 
-- **행은 플러그인명 알파벳 순으로 정렬한다.** 끝에 붙이지 않는다
+- **행은 플러그인명 알파벳순으로 정렬한다.** 끝에 붙이지 않는다
 - 링크는 저장소로 직접 건다 (페이지 내 앵커 아님)
-- 카테고리는 `productivity` · `utility` · `fun` 중 하나. 새 카테고리는 꼭 필요할 때만 만든다
+- 카테고리는 `productivity`, `utility`, `fun` 중 하나다. 새 카테고리는 꼭 필요할 때만 만든다
 
-### 4. 검증·커밋·푸시
+### 4. 검증, 커밋, 푸시
 
 ```sh
 claude plugin validate .
@@ -73,7 +73,7 @@ git pull --rebase origin main    # CI 자동 커밋 위로 얹는다 (아래 참
 git push origin main
 ```
 
-`pull --rebase`는 **커밋한 뒤에** 실행한다. 미커밋 변경이 남아 있으면 rebase가 거부된다.
+`pull --rebase`는 **커밋한 뒤에** 실행한다. 커밋하지 않은 변경이 남아 있으면 rebase가 거부된다.
 
 ---
 
@@ -94,7 +94,7 @@ README 표의 설명도 확인해 같은 기능을 설명하도록 맞춘다.
 
 보통은 CI의 자동 갱신에 맡긴다. 자세한 동작은 아래 자동화 항목을 참고한다.
 
-즉시 반영이 필요하면 워크플로를 수동 실행하거나(`workflow_dispatch`), 직접 수정한다.
+바로 반영해야 하면 워크플로를 수동으로 실행하거나(`workflow_dispatch`) 직접 수정한다.
 
 ### 플러그인 제거
 
@@ -106,24 +106,24 @@ README 표의 설명도 확인해 같은 기능을 설명하도록 맞춘다.
 
 `.github/workflows/sync-plugins.yml`
 
-- **주기**: 매일 KST 00:00 (`cron: 0 15 * * *`). `workflow_dispatch`로 수동 실행 가능
-- **동작**: `marketplace.json`의 각 항목에 대해 `git ls-remote <url> HEAD`로 최신 SHA를 조회해 갱신
-- **범위**: `source.sha` **만** 갱신한다. `name`·`description`·`url`은 사람이 관리한다
-- **커밋**: 변경이 있으면 `chore: 플러그인 SHA 자동 갱신`으로 자동 커밋·푸시
+- **주기**: 매시 정각 (`cron: 0 * * * *`). `workflow_dispatch`로 수동 실행 가능
+- **동작**: `marketplace.json`의 항목마다 `git ls-remote <url> HEAD`로 최신 SHA를 조회해 갱신
+- **범위**: **`source.sha`만** 갱신한다. `name`, `description`, `url`은 사람이 관리한다
+- **커밋**: 변경이 있으면 `chore: 플러그인 SHA 자동 갱신`으로 자동 커밋해 푸시
 
-**커밋한 뒤 push 전에 `git pull --rebase`를 습관화한다.** CI가 이 저장소에 직접 커밋하므로, 로컬이 뒤처져 있으면 push가 거부된다. 대개 다른 항목의 SHA만 바뀌어 충돌 없이 리베이스된다.
+**커밋한 뒤 푸시하기 전에 `git pull --rebase`를 습관화한다.** CI가 이 저장소에 직접 커밋하므로, 로컬이 뒤처져 있으면 푸시가 거부된다. 대개 다른 항목의 SHA만 바뀌어 충돌 없이 리베이스된다.
 
-플러그인 저장소에 커밋을 푸시하면 다음 자정에 SHA가 자동으로 따라온다. 즉 **플러그인 코드를 고친 뒤 이 저장소를 손댈 필요는 없다.**
+플러그인 저장소에 커밋을 푸시하면 다음 정각(늦어도 1시간 안)에 SHA가 자동으로 따라온다. 즉 **플러그인 코드를 고친 뒤 이 저장소에 손댈 필요는 없다.**
 
 ---
 
 ## 규칙
 
-- 표는 **플러그인명 알파벳 순**
+- 표는 **플러그인명 알파벳순**
 - README는 **한글·영문 쌍으로** 갱신
 - 상세 문서는 각 플러그인 저장소에 둔다 (여기에 복제 금지)
-- 커밋 메시지는 한글 + [Conventional Commits](https://www.conventionalcommits.org/ko/v1.0.0/) 접두어
-  - `feat:` 플러그인 등록·제거
-  - `docs:` README·이 문서 수정
-  - `chore:` SHA·설정
+- 커밋 메시지는 한글로 쓰고 [Conventional Commits](https://www.conventionalcommits.org/ko/v1.0.0/) 접두어를 붙인다
+  - `feat:` 플러그인 등록과 제거
+  - `docs:` README와 이 문서 수정
+  - `chore:` SHA와 설정
 - 브랜치는 `main` 하나를 쓴다
